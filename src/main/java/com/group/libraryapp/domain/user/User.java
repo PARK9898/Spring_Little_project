@@ -55,7 +55,7 @@ public class User {
 	// 만약 히스토리에 책이름 유저이름 반납완료 0 이면 어떡할건데?
 	public void returnBook(String bookName) {
 		UserLoanHistory targetHistory = this.userLoanHistories.stream()
-			.filter(history -> history.getBookName().equals(bookName))
+			.filter(history -> history.getBookName().equals(bookName) && !history.isReturn())
 			.findFirst()
 			.orElseThrow(IllegalAccessError::new);  //findFist()는 옵셔널로 반홚나다
 		targetHistory.doReturn();
