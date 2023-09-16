@@ -1,13 +1,18 @@
 package com.group.libraryapp.dto.user.response;
 
-import javax.persistence.criteria.CriteriaBuilder;
-
-import com.group.libraryapp.controller.domain.user.User;
+import com.group.libraryapp.domain.user.User;
 
 public class UserResponse {
 	private long id;
 	private String name;
 	private Integer age;
+
+	public UserResponse(long id, String name, Integer age) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+	}
+
 
 	public UserResponse(long id, User user) {
 		this.id = id;
